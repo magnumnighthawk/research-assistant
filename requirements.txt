@@ -1,0 +1,8 @@
+langchain
+langchain-community
+openai 
+arxiv 
+faiss-cpu 
+pinecone-client 
+streamlit
+tiktoken

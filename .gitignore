@@ -1,0 +1,10 @@
+.env
+__pycache__/
+*.pyc
+.DS_Store
+.env
+
+# Ignore FAISS index and docstore files
+faiss_index.bin
+docstore.pkl
+index_to_docstore_id.pkl
