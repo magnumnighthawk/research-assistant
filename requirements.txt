@@ -1,6 +1,6 @@
 langchain
 langchain-community
-openai 
+langchain_openai
 arxiv 
 faiss-cpu 
 pinecone-client 

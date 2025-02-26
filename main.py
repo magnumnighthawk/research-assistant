@@ -1,15 +1,11 @@
 import arxiv
 import faiss
-import numpy as np
 import os
-import openai
 import pickle
-from langchain_community.embeddings import OpenAIEmbeddings
+from langchain_openai import OpenAIEmbeddings
 from langchain_community.vectorstores import FAISS
-from langchain.text_splitter import RecursiveCharacterTextSplitter
-from langchain_community.llms import OpenAI
 from langchain_community.adapters.openai import ChatCompletion
-from langchain.docstore.in_memory import InMemoryDocstore
+from langchain_community.docstore.in_memory import InMemoryDocstore
 from langchain.docstore.document import Document
 from dotenv import load_dotenv
 
@@ -97,7 +93,7 @@ def search_summaries(query, top_k=3):
 # Main Function
 def main():
     while True:
-        choice = input("Choose an option: (1) Research a new topic (2) Search through saved summaries (3) Exit: ")
+        choice = input("Choose an option: \n(1) Research a new topic (2) Search through saved summaries (3) Exit: ")
         
         if choice == '1':
             query = input("Enter research topic: ")
@@ -116,8 +112,8 @@ def main():
             results = search_summaries(query)
             
             print("Search Results:")
-            for doc in results:
-                print(f"* {doc.page_content} [{doc.metadata}]")
+            for index, doc in enumerate(results):
+                print(f"{index + 1}. {doc.metadata['title']}\n{doc.page_content}\n\n")
         
         elif choice == '3':
             print("Exiting the program.")
