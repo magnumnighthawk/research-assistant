@@ -75,11 +75,28 @@ This project is a research assistant tool that fetches research papers from ArXi
 ## Project Structure
 
 - main.py: Main script that contains the core functionality.
+- test_main.py: Test suite for the project functionality.
 - .env.sample: Sample environment file with placeholders for API keys.
 - requirements.txt: List of required Python packages.
 - faiss_index.bin: FAISS index file (ignored by Git).
 - docstore.pkl: Docstore file (ignored by Git).
 - index_to_docstore_id.pkl: Index to docstore ID mapping file (ignored by Git).
+
+## Testing
+
+To run the tests for this project:
+
+```sh
+python -m pytest test_main.py -v
+```
+
+The test suite covers:
+- File operations (save/load FAISS index and docstore)
+- Paper fetching from ArXiv
+- Paper summarization
+- Vector storage operations
+- Search functionality
+- Application flow through the main function
 
 ## License
 

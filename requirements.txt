@@ -6,3 +6,5 @@ faiss-cpu
 pinecone-client 
 streamlit
 tiktoken
+pytest
+pytest-mock
