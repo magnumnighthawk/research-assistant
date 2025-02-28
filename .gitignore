@@ -8,3 +8,7 @@ __pycache__/
 faiss_index.bin
 docstore.pkl
 index_to_docstore_id.pkl
+
+# Ignore pytest cache and virtual environment
+.pytest_cache/
+.venv/
